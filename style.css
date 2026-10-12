@@ -1,0 +1,1050 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #170b19;
+    color: white;
+    overflow: hidden;
+}
+
+
+/* =========================
+   PANTALLAS
+========================= */
+
+.pantalla {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #702d60 0%,
+            #35182f 45%,
+            #120811 100%
+        );
+
+    animation: aparecer 1s ease;
+}
+
+.pantalla.activa {
+    display: flex;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.contenido {
+    width: 90%;
+    max-width: 750px;
+    position: relative;
+    z-index: 5;
+}
+
+.introduccion {
+    color: #f7bfdc;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+.pequeno {
+    color: #f6b5d6;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 75px);
+
+    color: #fff1fa;
+
+    text-shadow:
+        0 0 10px #ff9bd2,
+        0 0 25px #ff4fa9;
+
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.subtitulo,
+.mensaje {
+    color: #ffe0ed;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    max-width: 620px;
+
+    margin: 0 auto 30px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+button {
+    border: none;
+
+    padding: 15px 32px;
+
+    border-radius: 50px;
+
+    background: #ee82bd;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255, 130, 190, .8);
+
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    background: #ffabd5;
+
+    box-shadow:
+        0 0 25px rgba(255, 171, 213, .9);
+}
+
+
+/* =========================
+   LUNA
+========================= */
+
+.luna {
+    font-size: 100px;
+
+    margin-bottom: 10px;
+
+    animation:
+        flotar 3s ease-in-out infinite,
+        brillo 2s infinite alternate;
+}
+
+
+/* =========================
+   REGALO
+========================= */
+
+.caja {
+    width: 170px;
+    height: 150px;
+
+    margin: 30px auto;
+
+    position: relative;
+
+    cursor: pointer;
+
+    animation: flotar 2s ease-in-out infinite;
+
+    transition: .4s;
+}
+
+.caja:hover {
+    transform: scale(1.08);
+}
+
+.cuerpo-caja {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 170px;
+    height: 105px;
+
+    background: #d94f93;
+
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 70px;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.3);
+}
+
+.tapa {
+    position: absolute;
+
+    top: 20px;
+
+    width: 190px;
+    height: 35px;
+
+    left: -10px;
+
+    background: #f083bb;
+
+    border-radius: 8px;
+
+    z-index: 2;
+
+    transition: .7s;
+}
+
+.caja.abierta .tapa {
+    transform:
+        translateY(-70px)
+        rotate(-8deg);
+}
+
+.instruccion {
+    color: #f8c8df;
+}
+
+
+/* =========================
+   FLORES
+========================= */
+
+.flores {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.corazones {
+    font-size: 30px;
+
+    margin: 25px;
+
+    animation: latido 1.5s infinite;
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.frase {
+    max-width: 550px;
+
+    margin: 35px auto;
+
+    padding: 30px;
+
+    border-top: 1px solid rgba(255,255,255,.25);
+    border-bottom: 1px solid rgba(255,255,255,.25);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.frase span {
+    color: #ff9dcc;
+    font-size: 30px;
+}
+
+.frase p {
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    color: #ffe4f0;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+    width: 90%;
+    max-width: 720px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 45px;
+
+    background: #fff1f7;
+
+    color: #4b203d;
+
+    border-radius: 28px;
+
+    border: 3px solid #f2afd0;
+
+    box-shadow:
+        0 0 40px rgba(255,145,203,.5);
+}
+
+.carta h1 {
+    color: #a33d76;
+
+    text-shadow: none;
+
+    font-size: 45px;
+}
+
+.sobre {
+    font-size: 60px;
+
+    margin-bottom: 5px;
+}
+
+#textoCarta {
+    text-align: left;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    white-space: pre-line;
+
+    min-height: 260px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   PASTEL
+========================= */
+
+.pastel {
+    font-size: 130px;
+
+    cursor: pointer;
+
+    animation:
+        flotar 2s ease-in-out infinite,
+        latido 2s infinite;
+
+    margin: 20px;
+}
+
+#velasTexto {
+    color: #f6bfd8;
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   MENSAJE FINAL
+========================= */
+
+.mensaje-final {
+    display: none;
+
+    animation: aparecer 1.5s ease;
+}
+
+.mensaje-final.visible {
+    display: block;
+}
+
+.mensaje-final h2 {
+    color: #ffb0d4;
+
+    text-shadow:
+        0 0 12px #ff6eb4;
+}
+
+.mensaje-final p {
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #ffe3ef;
+
+    max-width: 650px;
+
+    margin: 15px auto;
+}
+
+.firma {
+    color: #f6b8d5 !important;
+}
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+.estrellas::before {
+    content:
+        "✦    ✧    ⋆    ✦    ⋆    ✧    ✦    ⋆";
+
+    position: fixed;
+
+    top: 10%;
+    left: 0;
+
+    width: 100%;
+
+    color: rgba(255,220,240,.7);
+
+    font-size: 22px;
+
+    word-spacing: 35px;
+
+    animation:
+        moverEstrellas 10s linear infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   MARIPOSAS
+========================= */
+
+.mariposas {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+.mariposas span,
+.mariposas {
+    font-size: 25px;
+}
+
+.mariposas span {
+    position: absolute;
+
+    animation:
+        volar 10s linear infinite;
+}
+
+.mariposas span:nth-child(1) {
+    left: 15%;
+    top: 80%;
+    animation-delay: 1s;
+}
+
+.mariposas span:nth-child(2) {
+    left: 75%;
+    top: 70%;
+    animation-delay: 4s;
+}
+
+
+/* =========================
+   PÉTALOS
+========================= */
+
+.petalo {
+    position: fixed;
+
+    top: -30px;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    animation:
+        caer linear forwards;
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes brillo {
+
+    from {
+        filter: drop-shadow(0 0 5px white);
+    }
+
+    to {
+        filter: drop-shadow(0 0 25px #ff9bd2);
+    }
+}
+
+@keyframes moverEstrellas {
+
+    from {
+        transform: translateX(-10%);
+    }
+
+    to {
+        transform: translateX(10%);
+    }
+}
+
+@keyframes volar {
+
+    0% {
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translate(120px, -180px)
+            rotate(20deg);
+    }
+
+    100% {
+        transform:
+            translate(-80px, -400px)
+            rotate(-20deg);
+    }
+}
+
+@keyframes caer {
+
+    0% {
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(100px)
+            rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .subtitulo,
+    .mensaje {
+        font-size: 17px;
+    }
+
+    .carta {
+        padding: 25px;
+    }
+
+    .carta h1 {
+        font-size: 36px;
+    }
+
+    #textoCarta {
+        font-size: 16px;
+    }
+
+    .frase {
+        padding: 20px;
+    }
+
+    .frase p {
+        font-size: 17px;
+    }
+
+    .pastel {
+        font-size: 90px;
+    }
+}
+/* =========================
+   ÁLBUM DE RECUERDOS
+========================= */
+
+.album {
+
+    width: 92%;
+
+    max-width: 800px;
+
+    height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+.album h1 {
+
+    font-size: clamp(32px, 6vw, 55px);
+
+    margin-bottom: 8px;
+
+}
+
+.album-intro {
+
+    color: #ffe0ed;
+
+    font-size: 17px;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* POLAROID */
+
+.polaroid {
+
+    width: min(350px, 75vw);
+
+    background: #fffafc;
+
+    padding: 12px 12px 20px;
+
+    border-radius: 4px;
+
+    box-shadow:
+
+        0 15px 35px rgba(0, 0, 0, .35),
+
+        0 0 25px rgba(255, 160, 210, .25);
+
+    transform: rotate(-2deg);
+
+    animation: entrarFoto .7s ease;
+
+    color: #54253f;
+
+}
+
+
+.polaroid img {
+
+    width: 100%;
+
+    height: min(400px, 48vh);
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 2px;
+
+}
+
+
+/* TEXTO */
+
+.texto-foto {
+
+    padding-top: 12px;
+
+}
+
+#numeroFoto {
+
+    font-size: 13px;
+
+    color: #c06b9c;
+
+}
+
+#fraseFoto {
+
+    margin-top: 7px;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+
+}
+
+
+/* BOTONES */
+
+.controles-album {
+
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 18px;
+
+}
+
+.boton-album {
+
+    width: 48px;
+
+    height: 48px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+}
+
+
+/* BOTÓN CONTINUAR */
+
+.boton-continuar {
+
+    margin-top: 15px;
+
+}
+
+
+/* ANIMACIÓN DE FOTO */
+
+@keyframes entrarFoto {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            rotate(8deg)
+            scale(.85)
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            rotate(-2deg)
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    .album {
+
+        height: 92vh;
+
+    }
+
+    .album-intro {
+
+        font-size: 15px;
+
+        margin-bottom: 10px;
+
+    }
+
+    .polaroid {
+
+        width: 75vw;
+
+        padding: 9px 9px 16px;
+
+    }
+
+    .polaroid img {
+
+        height: 43vh;
+
+    }
+
+    #fraseFoto {
+
+        font-size: 15px;
+
+    }
+
+}
+/* =========================
+   SOBRE DE LA CARTA 💌
+========================= */
+
+.sobre-contenedor {
+    text-align: center;
+    animation: aparecerSobre 1.5s ease;
+}
+
+.sobre-contenedor h1 {
+    margin-top: 30px;
+    font-size: 2rem;
+}
+
+.sobre-contenedor p {
+    margin-top: 10px;
+    opacity: 0.8;
+    font-size: 1rem;
+}
+
+
+/* SOBRE */
+
+.sobre {
+    position: relative;
+    width: 230px;
+    height: 155px;
+    margin: auto;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.5));
+}
+
+.sobre:hover {
+    transform: scale(1.08);
+}
+
+.sobre-cuerpo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #ff9acb, #c94f9d);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+
+/* TAPA */
+
+.sobre-tapa {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+
+    border-left: 115px solid transparent;
+    border-right: 115px solid transparent;
+    border-top: 85px solid #ffb6dc;
+
+    transform-origin: top center;
+    transition: transform 1s ease;
+}
+
+
+/* ANIMACIÓN AL ABRIR */
+
+.sobre.abierto .sobre-tapa {
+    transform: rotateX(180deg);
+}
+
+.sobre.abierto {
+    animation: sobreAbierto 1s ease;
+}
+
+
+@keyframes sobreAbierto {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes aparecerSobre {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* CARTA OCULTA */
+
+#cartaContenido {
+    display: none;
+}
+
+
+/* CARTA APARECE */
+
+#cartaContenido.mostrarCarta {
+    display: block;
+    animation: aparecerCarta 1.5s ease;
+}
+
+
+@keyframes aparecerCarta {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.corazon-carta {
+    font-size: 45px;
+    animation: latido 1.5s infinite;
+}
+
+
+@keyframes latido {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+/* Brillo mágico para el pastel y los botones */
+
+.pastel {
+    filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.45));
+    animation: brilloPastel 3s ease-in-out infinite;
+}
+
+button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.65);
+}
+
+@keyframes brilloPastel {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.3));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 25px rgba(255, 105, 180, 0.8));
+    }
+}

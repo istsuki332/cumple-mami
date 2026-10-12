@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para mi Mami 💗</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <audio id="cancion" loop>
+    <source src="music/cancion.mp3" type="audio/mpeg">
+</audio>
+
+    <!-- PÉTALOS -->
+    <div id="petalos"></div>
+
+    <!-- ESTRELLAS -->
+    <div class="estrellas"></div>
+
+    <!-- MARIPOSAS -->
+    <div class="mariposas">
+        🦋
+        <span>🦋</span>
+        <span>🦋</span>
+    </div>
+
+
+    <!-- =========================
+         PANTALLA 1
+    ========================== -->
+
+    <section class="pantalla activa" id="pantalla1">
+
+        <div class="contenido">
+
+            <div class="luna">🌙</div>
+
+            <p class="introduccion">
+                Hay alguien que merece un regalo
+                muy especial...
+            </p>
+
+            <h1>
+                Para mi<br>
+                mami 💗
+            </h1>
+
+            <p class="subtitulo">
+                He preparado algo pequeñito para ti,
+                pero hecho con muchísimo amor.
+            </p>
+
+            <button onclick="siguiente(2)">
+                ✨ CONTINUAR ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PANTALLA 2
+    ========================== -->
+
+    <section class="pantalla" id="pantalla2">
+
+        <div class="contenido">
+
+            <p class="pequeno">
+                Antes de continuar...
+            </p>
+
+            <h2>
+                Tengo un regalo para ti 🎁
+            </h2>
+
+            <div class="caja" onclick="abrirRegalo()">
+
+                <div class="tapa"></div>
+
+                <div class="cuerpo-caja">
+                    🎁
+                </div>
+
+            </div>
+
+            <p class="instruccion">
+                Toca la cajita para abrirla 💗
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PANTALLA 3
+    ========================== -->
+
+    <section class="pantalla" id="pantalla3">
+
+        <div class="contenido">
+
+            <div class="flores">
+                🌷 🌸 🌷
+            </div>
+
+            <p class="pequeno">
+                Y ahora sí...
+            </p>
+
+            <h1>
+                ¡Feliz cumpleaños,<br>
+                mami! 🎂
+            </h1>
+
+            <p class="mensaje">
+                Hoy quiero celebrar tu vida
+                y agradecer por tenerte conmigo.
+            </p>
+
+            <div class="corazones">
+                💗 ✨ 💗 ✨ 💗
+            </div>
+
+            <button onclick="siguiente(4)">
+                🌸 CONTINUAR
+            </button>
+
+        </div>
+
+    </section>
+
+
+ <!-- =========================
+     ÁLBUM DE RECUERDOS
+========================== -->
+
+<section class="pantalla" id="pantalla4">
+
+    <div class="album">
+
+        <p class="pequeno">
+            Algunos de nuestros recuerdos...
+        </p>
+
+        <h1>
+            📸 Mis mejores momentos contigo
+        </h1>
+
+        <p class="album-intro">
+            Porque hay momentos que merecen
+            quedarse guardados para siempre. 💗
+        </p>
+
+
+        <!-- POLAROID -->
+
+        <div class="polaroid">
+
+            <img
+                id="fotoAlbum"
+                src="imagenes/foto1.jpg"
+                alt="Recuerdo con mami"
+            >
+
+            <div class="texto-foto">
+
+                <span id="numeroFoto">
+                    1 / 18
+                </span>
+
+                <p id="fraseFoto">
+                    Una foto de mi mami. 💗
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTROLES -->
+
+        <div class="controles-album">
+
+            <button
+                onclick="fotoAnterior()"
+                class="boton-album">
+                ←
+            </button>
+
+            <button
+                onclick="fotoSiguiente()"
+                class="boton-album">
+                →
+            </button>
+
+        </div>
+
+
+        <button
+            id="continuarAlbum"
+            onclick="siguiente(5)"
+            class="boton-continuar"
+            style="display:none;">
+
+            💌 CONTINUAR
+
+        </button>
+
+    </div>
+
+</section>
+<section class="pantalla" id="pantalla5">
+
+    <!-- SOBRE -->
+    <div class="sobre-contenedor" id="sobreInicio">
+
+        <div class="sobre" onclick="abrirCarta()">
+            <div class="sobre-tapa"></div>
+            <div class="sobre-cuerpo">
+                💌
+            </div>
+        </div>
+
+        <h1>Hay algo que quiero decirte...</h1>
+        <p>Toca el sobre para abrirlo 💗</p>
+
+    </div>
+
+
+    <!-- CARTA -->
+    <div class="carta" id="cartaContenido">
+
+        <div class="corazon-carta">💗</div>
+
+        <h1>Una carta para ti</h1>
+
+        <div id="textoCarta"></div>
+
+        <button id="botonCarta" onclick="siguiente(6)" style="display:none;">
+            🎂 CONTINUAR
+        </button>
+
+    </div>
+
+</section>
+    <!-- =========================
+         PANTALLA 6
+    ========================== -->
+
+    <section class="pantalla" id="pantalla6">
+
+        <div class="contenido">
+
+            <p class="pequeno">
+                Y antes de terminar...
+            </p>
+
+            <h1>
+                Pide un deseo ✨
+            </h1>
+
+            <div class="pastel" onclick="apagarVelas()">
+                🎂
+            </div>
+
+            <p id="velasTexto">
+                Toca el pastel para apagar las velitas 🕯️
+            </p>
+
+            <div id="mensajeFinal" class="mensaje-final">
+
+                <h2>
+                    Te quiero muchísimo, mami. 💗
+                </h2>
+
+                <p>
+                    Gracias por ser parte de mi vida,
+                    por todo lo que haces y por todos
+                    los momentos que todavía nos quedan
+                    por vivir juntas.
+                </p>
+
+                <div class="corazones">
+                    🌷 💗 🌷
+                </div>
+
+                <p class="firma">
+                    Con todo mi amor,<br>
+                    tu hija 💕
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
